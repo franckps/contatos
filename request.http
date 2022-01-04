@@ -12,3 +12,7 @@ Content-Type: application/json
     "CEP": "any_value",
     "birth_date": "any_value"
 }
+
+###
+
+GET http://localhost:80/api
