@@ -1,0 +1,14 @@
+POST http://localhost:80/api
+Content-Type: application/json
+
+{
+    "first_name": "any_value",
+    "last_name": "any_value",
+    "main_phone": "any_value",
+    "other_phone": "any_value",
+    "street": "any_value",
+    "number": "any_value",
+    "district": "any_value",
+    "CEP": "any_value",
+    "birth_date": "any_value"
+}
