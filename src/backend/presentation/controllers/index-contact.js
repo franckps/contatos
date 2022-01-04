@@ -1,16 +1,16 @@
 const { serverError, ok } = require('../helpers/http');
 
-module.exports = class AddContactController {
+module.exports = class IndexContactController {
   validation = null;
-  addContactData = null;
-  constructor(validation, addContactData) {
+  indexContactData = null;
+  constructor(validation, indexContactData) {
     this.validation = validation;
-    this.addContactData = addContactData;
+    this.indexContactData = indexContactData;
   }
 
   async handle({ body }) {
     try {
-      const data = await this.addContactData.index();
+      const data = await this.indexContactData.index();
       return ok(data);
     } catch (err) {
       return serverError();
