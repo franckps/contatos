@@ -1,0 +1,16 @@
+{
+  "name": "contatos",
+  "version": "1.0.0",
+  "description": "Uma aplicacao simples para agendamento de contatos",
+  "main": "src/index.js",
+  "repository": "https://github.com/franckps/contatos.git",
+  "author": "Franckps",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
