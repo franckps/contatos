@@ -1,5 +1,3 @@
-const { randomUUID } = require('crypto');
-
 module.exports = class DbFindContact {
   findContactRepository;
   constructor(findContactRepository) {
@@ -7,6 +5,6 @@ module.exports = class DbFindContact {
   }
 
   async index() {
-    await this.findContactRepository.find();
+    return this.findContactRepository.find();
   }
 };

@@ -6,10 +6,10 @@ module.exports = class AddContactLocal {
 
   async add(data) {
     this.databaseInstance.push(data);
-    Promise.resolve();
+    return Promise.resolve();
   }
 
   async find() {
-    Promise.resolve(this.databaseInstance.map());
+    return Promise.resolve(this.databaseInstance);
   }
 };
