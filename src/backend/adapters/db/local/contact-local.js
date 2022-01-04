@@ -8,4 +8,8 @@ module.exports = class AddContactLocal {
     this.databaseInstance.push(data);
     Promise.resolve();
   }
+
+  async find() {
+    Promise.resolve(this.databaseInstance.map());
+  }
 };
