@@ -1,5 +1,5 @@
-const RequiredFieldValidation = require('../../../validation/validators/required-field-validation');
-const ValidationComposite = require('../../../validation/validators/validation-composite');
+const RequiredFieldValidation = require('../../../../validation/validators/required-field-validation');
+const ValidationComposite = require('../../../../validation/validators/validation-composite');
 
 module.exports = makeAddContactControllerValidation = () => {
   const validations = [];

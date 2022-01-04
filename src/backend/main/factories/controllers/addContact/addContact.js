@@ -1,6 +1,6 @@
-const AddContactLocal = require('../../../adapters/db/local/contact-local');
-const DbAddContact = require('../../../data/add-contact');
-const AddContactController = require('../../../presentation/controllers/add-contact');
+const AddContactLocal = require('../../../../adapters/db/local/contact-local');
+const DbAddContact = require('../../../../data/add-contact');
+const AddContactController = require('../../../../presentation/controllers/add-contact');
 const makeAddContactControllerValidation = require('./validation');
 
 module.exports = makeAddContactController = (db) => {
