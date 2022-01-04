@@ -1,3 +1,5 @@
+const { randomUUID } = require('crypto');
+
 module.exports = class DbAddContact {
   addContactRepository;
   constructor(addContactRepository) {
@@ -5,6 +7,7 @@ module.exports = class DbAddContact {
   }
 
   async add(data) {
+    data.id = randomUUID();
     await this.addContactRepository.add(data);
   }
 };
