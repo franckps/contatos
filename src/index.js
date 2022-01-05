@@ -1,12 +1,14 @@
-const express = require('express')
-const backendRoutes = require('./backend/routes')
+const express = require('express');
+const path = require('path');
+const backendRoutes = require('./backend/routes');
+const frontendRoutes = require('./frontend/routes');
 
-const app = express()
+const app = express();
 
-app.use('/api', backendRoutes)
+app.use('/api', backendRoutes);
 
-app.get('/', (req, res) => {
-    res.send("Hey Dude!")
-})
+app.set('view engine', 'ejs');
+app.set('views', path.resolve(__dirname, 'frontend', 'views'));
+app.use('/', frontendRoutes);
 
-app.listen('80')
+app.listen('80');
