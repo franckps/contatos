@@ -5,6 +5,6 @@ module.exports = class DbUpdateContact {
   }
 
   async update(id, data) {
-    await this.updateContactRepository.update(id, data);
+    return this.updateContactRepository.update(id, data);
   }
 };

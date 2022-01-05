@@ -1,4 +1,4 @@
-const { serverError, badRequest, noContent } = require('../helpers/http');
+const { serverError, badRequest, ok } = require('../helpers/http');
 
 module.exports = class AddContactController {
   validation = null;
@@ -22,7 +22,7 @@ module.exports = class AddContactController {
         address: { state, city, street, number, district, CEP },
         birth_date,
       } = body;
-      await this.addContactData.add({
+      const newContact = await this.addContactData.add({
         first_name,
         last_name,
         main_phone: { code: main_code, phone: main_phone },
@@ -30,7 +30,7 @@ module.exports = class AddContactController {
         address: { state, city, street, number, district, CEP },
         birth_date,
       });
-      return noContent();
+      return ok(newContact);
     } catch (err) {
       return serverError();
     }
