@@ -5,6 +5,8 @@ const frontendRoutes = require('./frontend/routes');
 
 const app = express();
 
+app.use('/public', express.static(path.join(__dirname, 'frontend', 'public')));
+
 app.use('/api', backendRoutes);
 
 app.set('view engine', 'ejs');
