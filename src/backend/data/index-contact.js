@@ -5,6 +5,6 @@ module.exports = class DbFindContact {
   }
 
   async index() {
-    return this.findContactRepository.find();
+    return this.findContactRepository.find({ active: true });
   }
 };

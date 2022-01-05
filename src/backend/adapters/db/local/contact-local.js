@@ -9,8 +9,11 @@ module.exports = class AddContactLocal {
     return Promise.resolve(data);
   }
 
-  async find() {
-    return Promise.resolve(this.databaseInstance);
+  async find({ active }) {
+    if (!active && active !== false) Promise.resolve(this.databaseInstance);
+    return Promise.resolve(
+      this.databaseInstance.filter((contact) => contact.active === active)
+    );
   }
 
   async update(id, data) {

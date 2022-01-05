@@ -8,6 +8,7 @@ module.exports = class DbAddContact {
 
   async add(data) {
     data.id = randomUUID();
+    data.active = true;
     return this.addContactRepository.add(data);
   }
 };
