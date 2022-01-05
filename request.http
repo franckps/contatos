@@ -29,7 +29,7 @@ GET http://localhost:80/api
 
 ###
 
-PUT http://localhost:80/api/6beb625f-c7df-4b5a-bc8f-0da816dffc45
+PUT http://localhost:80/api/55547140-7d07-429c-82c1-dd89efacaa6a
 Content-Type: application/json
 
 {
@@ -53,3 +53,7 @@ Content-Type: application/json
     },
     "birth_date": "any_value"
 }
+
+###
+
+DELETE http://localhost:80/api/55547140-7d07-429c-82c1-dd89efacaa6a
