@@ -1,0 +1,65 @@
+/**
+Contact list
+*/
+
+.contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-list li {
+    min-width: 25rem;
+    padding: 1rem;
+    border-image-slice: 1;
+    border-width: .2rem;
+    border-style: solid;
+    border-image-source: linear-gradient(to left, #fff, #ccc, #fff);
+    border-color: #ccc;
+    border-radius: 1.5rem;
+}
+.contact-list li:hover {
+    background-color: #E9E8E7;
+}
+.contact-list li a {
+    text-decoration: none;
+    color: unset;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.contact-list li a > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-list li .image {
+    height: 5rem;
+    aspect-ratio: 1;
+    width: 5rem;
+    border: .2rem solid #000;
+    border-radius: 50%;
+    background-color: #D96;
+    transform: scale(120%);
+    opacity: 0.3;
+}
+.contact-list li .data {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 0 1.5rem;
+}
+.contact-list li .data span {
+    color: #909090
+}
+.contact-list li .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-list li .menu > * {
+    height: .5rem;
+    font-weight: bold;
+    line-height: 0;
+}
