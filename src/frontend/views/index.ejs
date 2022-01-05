@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contatos</title>
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/public/menu-styles.css">
 </head>
 <body>
-    Hello world
+    <header></header>
+    <main>
+        <nav>
+            <ul>
+                <li class="hidden">
+                    <a href="/" class="btn">
+                        Listar
+                    </a>
+                </li>
+                <li>
+                    <a href="/" class="btn primary-green">
+                        + Adicionar
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <%- include('./contact-list.ejs') %>
+        </section>
+    </main>
+    <footer></footer>
 </body>
 </html>
