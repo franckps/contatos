@@ -2,6 +2,7 @@ module.exports = adaptRoute = (controller) => {
   return async (req, res) => {
     const httpRequest = {
       body: req.body,
+      params: req.params,
     };
 
     const httpResponse = await controller.handle(httpRequest);
