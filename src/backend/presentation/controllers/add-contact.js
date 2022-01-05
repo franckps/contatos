@@ -17,23 +17,17 @@ module.exports = class AddContactController {
       const {
         first_name,
         last_name,
-        main_phone,
-        other_phone,
-        street,
-        number,
-        district,
-        CEP,
+        main_phone: { code: main_code, phone: main_phone },
+        other_phone: { code: other_code, phone: other_phone },
+        address: { state, city, street, number, district, CEP },
         birth_date,
       } = body;
       await this.addContactData.add({
         first_name,
         last_name,
-        main_phone,
-        other_phone,
-        street,
-        number,
-        district,
-        CEP,
+        main_phone: { code: main_code, phone: main_phone },
+        other_phone: { code: other_code, phone: other_phone },
+        address: { state, city, street, number, district, CEP },
         birth_date,
       });
       return noContent();

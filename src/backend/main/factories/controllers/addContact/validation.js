@@ -8,10 +8,7 @@ module.exports = makeAddContactControllerValidation = () => {
     'last_name',
     'main_phone',
     'other_phone',
-    'street',
-    'number',
-    'district',
-    'CEP',
+    'address',
     'birth_date',
   ]) {
     validations.push(new RequiredFieldValidation(field));
