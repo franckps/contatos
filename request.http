@@ -26,3 +26,30 @@ Content-Type: application/json
 ###
 
 GET http://localhost:80/api
+
+###
+
+PUT http://localhost:80/api/6beb625f-c7df-4b5a-bc8f-0da816dffc45
+Content-Type: application/json
+
+{
+    "first_name": "Francisco",
+    "last_name": "Sousa",
+    "main_phone": { 
+        "code": "main_code", 
+        "phone": "main_phone" 
+    },
+    "other_phone": { 
+        "code": "other_code", 
+        "phone": "other_phone" 
+    },
+    "address": { 
+        "state": "Piaui",
+        "city": "Floriano",
+        "street": "Av. Bucar Neto", 
+        "number": "2150", 
+        "district": "Bom Lugar", 
+        "CEP": "64804430" 
+    },
+    "birth_date": "any_value"
+}
