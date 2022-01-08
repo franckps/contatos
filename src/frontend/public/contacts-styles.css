@@ -48,6 +48,7 @@ Contact list
     flex-direction: column;
     row-gap: 1rem;
     padding: 0 1.5rem;
+    flex: 1;
 }
 .contact-list li .data span {
     color: #909090

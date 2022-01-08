@@ -13,12 +13,18 @@ html {
 body {
     position: relative;
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     width: 100vw;
     background-color: #ccc;
-    justify-content: center;
+    align-items: center;
 }
 
 body > * {
     background-color: #fff;
+}
+
+body main {
+    width: 500px;
+    flex: 1;
 }
