@@ -1,0 +1,81 @@
+/**
+Contact Form
+*/
+
+.contact-form {
+    background-color: #fff;
+}
+
+.contact-form fieldset {
+    padding: 10px;
+}
+
+.contact-form fieldset label {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form fieldset input {
+    position: relative;
+    padding: 5px;
+    border-bottom: 2px solid #ccc;
+    outline: none
+}
+.contact-form fieldset input:focus {
+    border-bottom: 2px solid #5b3;
+}
+
+.contact-form .personal-data {
+    display: grid;
+    grid-template-areas:
+    'first_name last_name'
+    'birth_date blank';
+    grid-gap: 1rem;
+}
+label[for="first_name"] {
+    grid-area: first_name;
+}
+label[for="last_name"] {
+    grid-area: last_name;
+}
+label[for="birth_date"] {
+    grid-area: birth_date;
+}
+.contact-form .phone-data {
+    display: grid;
+    grid-template-areas:
+    'main_phone other_phone';
+    grid-gap: 1rem;
+}
+label[for="main_phone"] {
+    grid-area: main_phone;
+}
+label[for="other_phone"] {
+    grid-area: other_phone;
+}
+.contact-form .address-data {
+    display: grid;
+    grid-template-areas:
+    'cep state'
+    'city district'
+    'street number';
+    grid-gap: 1rem;
+}
+label[for="cep"] {
+    grid-area: cep;
+}
+label[for="state"] {
+    grid-area: state;
+}
+label[for="city"] {
+    grid-area: city;
+}
+label[for="district"] {
+    grid-area: district;
+}
+label[for="street"] {
+    grid-area: street;
+}
+label[for="number"] {
+    grid-area: number;
+}
