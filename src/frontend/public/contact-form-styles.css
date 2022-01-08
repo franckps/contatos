@@ -15,7 +15,7 @@ Contact Form
     flex-direction: column;
 }
 
-.contact-form fieldset input {
+.contact-form fieldset input:not([type="submit"]) {
     position: relative;
     padding: 5px;
     border-bottom: 2px solid #ccc;
@@ -78,4 +78,14 @@ label[for="street"] {
 }
 label[for="number"] {
     grid-area: number;
+}
+
+.contact-form .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form .buttons > * {
+    cursor: pointer;
 }
