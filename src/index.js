@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { port } = require('./configs');
 const backendRoutes = require('./backend/routes');
 const frontendRoutes = require('./frontend/routes');
 
@@ -13,4 +14,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'frontend', 'views'));
 app.use('/', frontendRoutes);
 
-app.listen('80');
+app.listen(port, () => {
+    console.log(`Server is running on port ${ port }`)
+});
