@@ -1,5 +1,5 @@
-<form method="POST" action="#" class="contact-form">
-    <link rel="stylesheet" href="/public/contact-form-styles.css">
+<form method="POST" class="contact-form" id="contact-form">
+    <link rel="stylesheet" href="/public/css/contact-form-styles.css">
     <fieldset class="personal-data">
         <label for="first_name">
             <span>Nome:</span>
@@ -53,6 +53,6 @@
         </label>
     </fieldset>
     <fieldset class="buttons">
-        <input class="btn primary-green" type="submit" value="Cadastrar">
+        <input class="btn primary-green" onclick="submitForm('contact-form')" type="button" value="Cadastrar">
     </fieldset>
 </form>
