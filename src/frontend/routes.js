@@ -1,12 +1,14 @@
 const { Router, json } = require('express');
 const frontend = Router();
-const { phoneSlices, joinPhone } = require('./helpers');
+const { phoneSlices, formatContactDataFromAPI } = require('./helpers');
 const api = require('./api');
 
 frontend.use(json());
 
-frontend.get('/contacts', (req, res) => {
-  res.render('./');
+frontend.get('/contacts', async (req, res) => {
+  const responseData = await api.get('/');
+  const contactsData = responseData.data.map(formatContactDataFromAPI);
+  res.render('./', { contactsData });
 });
 
 frontend.get('/contacts/form/', (req, res) => {
@@ -17,28 +19,7 @@ frontend.get('/contacts/form/:id', async (req, res) => {
   const id = req.params.id;
   const responseData = await api.get('/');
   const contact = responseData.data.find((elm) => elm.id === id);
-  const {
-    first_name,
-    last_name,
-    main_phone: { code: main_code, phone: main_number },
-    other_phone: { code: other_code, phone: other_number },
-    address: { state, city, street, number, district, CEP },
-    birth_date,
-  } = contact;
-  const contactData = {
-    id,
-    first_name,
-    last_name,
-    main_phone: joinPhone(main_code, main_number),
-    other_phone: joinPhone(other_code, other_number),
-    state,
-    city,
-    street,
-    number,
-    district,
-    CEP,
-    birth_date,
-  };
+  contactData = formatContactDataFromAPI(contact);
   console.log({ contactData });
   res.render('./pages/contact-form', { contactData });
 });

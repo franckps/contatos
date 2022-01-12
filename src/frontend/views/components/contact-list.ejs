@@ -1,14 +1,31 @@
 <ul class="contact-list">
     <link rel="stylesheet" href="/public/css/contacts-styles.css">
+<% if(typeof contactsData === 'undefined' || contactsData.length < 1) { %>
     <li>
-        <a href="#">
+        <a href="/contacts/form/">
+            <div>
+                <section>
+                    
+                </section>
+                <section class="data">
+                    Nenhum contato cadastrado
+                </section>
+                <section>
+                </section>
+            </div>
+        </a>
+    </li>
+<% } else { %>
+    <% contactsData.forEach(contactData => { %>
+    <li>
+        <a href="/contacts/form/<%= contactData.id %>">
             <div>
                 <section class="image">
                     
                 </section>
                 <section class="data">
-                    <strong>Francisco Pereira dos Santos</strong>
-                    <span>(89) 99435-3697</span>
+                    <strong><%= contactData.first_name + ' ' + contactData.last_name %></strong>
+                    <span><%= contactData.main_phone %></span>
                 </section>
                 <section class="menu">
                     <strong>.</strong>
@@ -18,4 +35,6 @@
             </div>
         </a>
     </li>
+    <% }); %>
+<% } %>
 </ul>
