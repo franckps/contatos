@@ -20,7 +20,8 @@ nav ul a {
 }
 .btn {
     background-color: #ccc;
-    border: 2px solid #555;
+    border: 1px solid #555;
+    color: #333;
     text-transform: uppercase;
     padding: 1rem 1.5rem;
     border-radius: .8rem;
@@ -33,6 +34,11 @@ nav ul a {
 .primary-green {
     background-color: #5a3;
     border: .2rem solid #180;
+    color: #fff;
+}
+.primary-red {
+    background-color: #c53;
+    border: .2rem solid #810;
     color: #fff;
 }
 

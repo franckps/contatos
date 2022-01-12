@@ -84,6 +84,7 @@ label[for="number"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .contact-form .buttons > * {

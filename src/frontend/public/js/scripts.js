@@ -22,5 +22,8 @@ function submitForm(formId, method) {
   console.log(formObj);
   fetch(action, config)
     .then((data) => data.json())
-    .then((res) => console.log({ res }));
+    .then((res) => {
+      console.log({ res });
+      alert(res.message);
+    });
 }
