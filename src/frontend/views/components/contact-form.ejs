@@ -1,58 +1,68 @@
-<form method="POST" class="contact-form" id="contact-form">
+<% if(!contactData) var contactData = {} %>
+<% const { id, first_name, last_name, birth_date, main_phone, other_phone, CEP, state, city, district, street, number } = contactData %>
+<form <%- !!id? `method="PUT" action="/contacts/${id}"` : 'method="POST" action="/contacts/"' %> class="contact-form" id="contact-form">
     <link rel="stylesheet" href="/public/css/contact-form-styles.css">
     <fieldset class="personal-data">
         <label for="first_name">
             <span>Nome:</span>
-            <input type="text" name="first_name" id="first_name" placeholder="João">
+            <input type="text" name="first_name" id="first_name" placeholder="João" value="<%= first_name %>">
         </label>
         <label for="last_name">
             <span>Sobrenome:</span>
-            <input type="text" name="last_name" id="last_name" placeholder="Silva">
+            <input type="text" name="last_name" id="last_name" placeholder="Silva" value="<%= last_name %>">
         </label>
         <label for="birth_date">
             <span>aniversário:</span>
-            <input type="text" name="birth_date" id="birth_date" placeholder="21/10">
+            <input type="text" name="birth_date" id="birth_date" placeholder="21/10" value="<%= birth_date %>">
         </label>
     </fieldset>
     <fieldset class="phone-data">
         <legend>Telefones</legend>
         <label for="main_phone">
             <span>Principal:</span>
-            <input type="text" name="main_phone" id="main_phone" placeholder="(89) 99458-3536">
+            <input type="text" name="main_phone" id="main_phone" placeholder="(89) 99458-3536" value="<%= main_phone %>">
         </label>
         <label for="other_phone">
             <span>Secundário:</span>
-            <input type="text" name="other_phone" id="other_phone" placeholder="(89) 99458-3536">
+            <input type="text" name="other_phone" id="other_phone" placeholder="(89) 99458-3536" value="<%= other_phone %>">
         </label>
     </fieldset>
     <fieldset class="address-data">
         <legend>Endereço</legend>
         <label for="CEP">
             <span>CEP:</span>
-            <input type="text" name="CEP" id="CEP" placeholder="64804430">
+            <input type="text" name="CEP" id="CEP" placeholder="64804430" value="<%= CEP %>">
         </label>
         <label for="state">
             <span>Estado:</span>
-            <input type="text" name="state" id="state" placeholder="Piauí">
+            <input type="text" name="state" id="state" placeholder="Piauí" value="<%= state %>">
         </label>
         <label for="city">
             <span>Cidade:</span>
-            <input type="text" name="city" id="city" placeholder="Floriano">
+            <input type="text" name="city" id="city" placeholder="Floriano" value="<%= city %>">
         </label>
         <label for="district">
             <span>Bairro:</span>
-            <input type="text" name="district" id="district" placeholder="Bom Lugar">
+            <input type="text" name="district" id="district" placeholder="Bom Lugar" value="<%= district %>">
         </label>
         <label for="street">
             <span>Rua:</span>
-            <input type="text" name="street" id="street" placeholder="Av. Bucar Neto">
+            <input type="text" name="street" id="street" placeholder="Av. Bucar Neto" value="<%= street %>">
         </label>
         <label for="number">
             <span>Número:</span>
-            <input type="text" name="number" id="number" placeholder="2526">
+            <input type="text" name="number" id="number" placeholder="2526" value="<%= number %>">
         </label>
     </fieldset>
     <fieldset class="buttons">
-        <input class="btn primary-green" onclick="submitForm('contact-form')" type="button" value="Cadastrar">
+        <% if(!!id){ %>
+            <input class="btn primary-green" onclick="submitForm('contact-form', 'put')" type="button" value="Update">
+            <input class="btn primary-red" onclick="submitForm('contact-delete', 'delete')" type="button" value="Delete">
+        <% } else { %>
+            <input class="btn primary-green" onclick="submitForm('contact-form')" type="button" value="Cadastrar">
+        <% } %>
     </fieldset>
 </form>
+<% if(!!id){ %>
+    <form method="DELETE" action="/contacts/<%= id %>" id="contact-delete"></form>
+<% } %>
