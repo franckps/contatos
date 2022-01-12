@@ -42,6 +42,19 @@ nav ul a {
     color: #fff;
 }
 
+.footer-button {
+    display: inline-flex;
+    height: 5rem;
+    width: 5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 1px 3px 10px #909090;
+}
+
 .hidden {
     display: none;
 }

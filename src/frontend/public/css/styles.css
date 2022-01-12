@@ -24,14 +24,28 @@ body > * {
     background-color: #fff;
 }
 
-body main {
+body > * {
     width: 500px;
+}
+
+body main {
     flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 5.5rem);
+    scrollbar-width: none;
+}
+
+body footer {
+    box-sizing: border-box;
+    height: 5.5rem;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    padding: 0 10px 10px 10px;
 }
 
 @media screen and (max-width: 550px){
-    body main {
+    body > * {
         width: 100%;
-        flex: 1;
     }
 }

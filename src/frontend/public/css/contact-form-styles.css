@@ -20,6 +20,7 @@ Contact Form
 .contact-form fieldset label {
     display: flex;
     flex-direction: column;
+    font-size: 1.2rem;
 }
 
 .contact-form fieldset label i {
@@ -30,11 +31,14 @@ Contact Form
 .contact-form fieldset input:not([type="submit"]):not([type="button"]) {
     position: relative;
     padding: 5px;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #909090;
     outline: none
 }
-.contact-form fieldset input{
+.contact-form fieldset input {
     font-size: 1.3rem;
+}
+.contact-form fieldset input::placeholder {
+    color: #909090;
 }
 .contact-form fieldset input:focus:not([type="submit"]):not([type="button"]) {
     border-bottom: 2px solid #5b3;
