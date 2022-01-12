@@ -4,27 +4,27 @@
     <link rel="stylesheet" href="/public/css/contact-form-styles.css">
     <fieldset class="personal-data">
         <label for="first_name">
-            <span>Nome:</span>
-            <input type="text" name="first_name" id="first_name" placeholder="João" value="<%= first_name %>">
+            <span><i>*</i>Nome:</span>
+            <input type="text" name="first_name" id="first_name" placeholder="João" value="<%= first_name %>" required>
         </label>
         <label for="last_name">
-            <span>Sobrenome:</span>
-            <input type="text" name="last_name" id="last_name" placeholder="Silva" value="<%= last_name %>">
+            <span><i>*</i>Sobrenome:</span>
+            <input type="text" name="last_name" id="last_name" placeholder="Silva" value="<%= last_name %>" required>
         </label>
         <label for="birth_date">
-            <span>aniversário:</span>
-            <input type="text" name="birth_date" id="birth_date" placeholder="21/10" value="<%= birth_date %>">
+            <span><i>*</i>data de nascimento:</span>
+            <input type="date" name="birth_date" id="birth_date" placeholder="21/10/1999" value="<%= birth_date %>" required>
         </label>
     </fieldset>
     <fieldset class="phone-data">
         <legend>Telefones</legend>
         <label for="main_phone">
-            <span>Principal:</span>
-            <input type="text" name="main_phone" id="main_phone" placeholder="(89) 99458-3536" value="<%= main_phone %>">
+            <span><i>*</i>Principal:</span>
+            <input type="phone" name="main_phone" id="main_phone" placeholder="(89) 99458-3536" value="<%= main_phone %>" maxlength="15" minlength="15" required>
         </label>
         <label for="other_phone">
             <span>Secundário:</span>
-            <input type="text" name="other_phone" id="other_phone" placeholder="(89) 99458-3536" value="<%= other_phone %>">
+            <input type="phone" name="other_phone" id="other_phone" placeholder="(89) 99458-3536" value="<%= other_phone %>" maxlength="15" minlength="15">
         </label>
     </fieldset>
     <fieldset class="address-data">
@@ -66,3 +66,4 @@
 <% if(!!id){ %>
     <form method="DELETE" action="/contacts/<%= id %>" id="contact-delete"></form>
 <% } %>
+<script src="/public/js/form.js"></script>

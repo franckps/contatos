@@ -15,6 +15,11 @@ Contact Form
     flex-direction: column;
 }
 
+.contact-form fieldset label i {
+    color: #f00;
+    font-weight: bold;
+}
+
 .contact-form fieldset input:not([type="submit"]):not([type="button"]) {
     position: relative;
     padding: 5px;
