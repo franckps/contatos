@@ -5,6 +5,10 @@ const api = require('./api');
 
 frontend.use(json());
 
+frontend.get('/', (req, res) => {
+  res.redirect('/contacts');
+});
+
 frontend.get('/contacts', async (req, res) => {
   const responseData = await api.get('/');
   const contactsData = responseData.data.map(formatContactDataFromAPI);

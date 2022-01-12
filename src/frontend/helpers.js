@@ -11,6 +11,7 @@ const helpers = {
     }
   },
   joinPhone(code, number) {
+    if (!code || !number) return '';
     code = code.replace(/\W/gi, '');
     number = number.replace(/\W/gi, '').replace(/(^[0-9]{5})([0-9]+)/, '$1-$2');
     return `(${code}) ${number}`;
