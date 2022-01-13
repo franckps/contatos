@@ -12,6 +12,21 @@ frontend.get('/', (req, res) => {
 frontend.get('/contacts', async (req, res) => {
   const responseData = await api.get('/');
   const contactsData = responseData.data.map(formatContactDataFromAPI);
+  contactsData.sort((elm, elm2) => {
+    if (
+      (elm.first_name + elm.last_name).toUpperCase() <
+      (elm2.first_name + elm2.last_name).toUpperCase()
+    ) {
+      return -1;
+    }
+    if (
+      (elm.first_name + elm.last_name).toUpperCase() >
+      (elm2.first_name + elm2.last_name).toUpperCase()
+    ) {
+      return 1;
+    }
+    return 0;
+  });
   res.render('./', { contactsData });
 });
 
