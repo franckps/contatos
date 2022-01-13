@@ -1,0 +1,299 @@
+openapi: 3.0.0
+info:
+  description:
+    API EPs documentation.
+  version: "1.0.0"
+  title: API documentation
+
+servers:
+  - url: http://localhost:3000/api/
+tags:
+  - name: contacts
+paths:
+  /:
+    post:
+      summary: Create contact
+      operationId: posContact
+      tags:
+        - "contacts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: Zeca
+                last_name:
+                  type: string
+                  example: Santos
+                main_phone:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                      example: (89)
+                    phone:
+                      type: string
+                      example: 99410-3497
+                other_phone:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                      example: (86)
+                    phone:
+                      type: string
+                      example: 99565-9897
+                address:
+                  type: object
+                  properties:
+                    state:
+                      type: string
+                      example: Piauí
+                    city:
+                      type: string
+                      example: Floriano
+                    street:
+                      type: string
+                      example: Av. Bucar Neto
+                    number:
+                      type: string
+                      example: 2212
+                    district:
+                      type: string
+                      example: Bom Lugar
+                    CEP:
+                      type: string
+                      example: 64804430
+                birth_date:
+                  type: string
+                  example: 29/04/1997
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  first_name:
+                    type: string
+                  last_name:
+                    type: string
+                  main_phone:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      phone:
+                        type: string
+                  other_phone:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      phone:
+                        type: string
+                  address:
+                    type: object
+                    properties:
+                      state:
+                        type: string
+                      city:
+                        type: string
+                      street:
+                        type: string
+                      number:
+                        type: string
+                      district:
+                        type: string
+                      CEP:
+                        type: string
+                  birth_date:
+                    type: string
+                  active:
+                    type: boolean
+    get:
+      summary: Get contacts list
+      operationId: getContact
+      tags:
+        - "contacts"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: string
+                    first_name:
+                      type: string
+                    last_name:
+                      type: string
+                    main_phone:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        phone:
+                          type: string
+                    other_phone:
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                        phone:
+                          type: string
+                    address:
+                      type: object
+                      properties:
+                        state:
+                          type: string
+                        city:
+                          type: string
+                        street:
+                          type: string
+                        number:
+                          type: string
+                        district:
+                          type: string
+                        CEP:
+                          type: string
+                    birth_date:
+                      type: string
+                    active:
+                      type: boolean
+  /{id}:
+    put:
+      summary: Update contact
+      operationId: putContact
+      tags:
+        - "contacts"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: Zeca
+                last_name:
+                  type: string
+                  example: Santos
+                main_phone:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                      example: (89)
+                    phone:
+                      type: string
+                      example: 99410-3497
+                other_phone:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                      example: (86)
+                    phone:
+                      type: string
+                      example: 99565-9897
+                address:
+                  type: object
+                  properties:
+                    state:
+                      type: string
+                      example: Piauí
+                    city:
+                      type: string
+                      example: Floriano
+                    street:
+                      type: string
+                      example: Av. Bucar Neto
+                    number:
+                      type: string
+                      example: 2212
+                    district:
+                      type: string
+                      example: Bom Lugar
+                    CEP:
+                      type: string
+                      example: 64804430
+                birth_date:
+                  type: string
+                  example: 29/04/1997
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  first_name:
+                    type: string
+                  last_name:
+                    type: string
+                  main_phone:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      phone:
+                        type: string
+                  other_phone:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      phone:
+                        type: string
+                  address:
+                    type: object
+                    properties:
+                      state:
+                        type: string
+                      city:
+                        type: string
+                      street:
+                        type: string
+                      number:
+                        type: string
+                      district:
+                        type: string
+                      CEP:
+                        type: string
+                  birth_date:
+                    type: string
+                  active:
+                    type: boolean
+    delete:
+      summary: Delete contact
+      operationId: deleteContact
+      tags:
+        - "contacts"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        "204":
+          description: Success
