@@ -12,18 +12,7 @@
     <header></header>
     <main>
         <nav>
-            <ul>
-                <li class="hidden">
-                    <a href="/contacts/" class="btn">
-                        Listar
-                    </a>
-                </li>
-                <li>
-                    <a href="/contacts/form" class="btn primary-green">
-                        + Adicionar
-                    </a>
-                </li>
-            </ul>
+            <input type="text" id="searchContact" onkeyup="findByName(this.value)" class="search" placeholder="Procurar contato...">
         </nav>
         <section>
             <%- include('../components/contact-list.ejs') %>
@@ -35,4 +24,5 @@
         </a>
     </footer>
 </body>
+<script src="/public/js/list.js"></script>
 </html>
